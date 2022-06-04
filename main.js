@@ -40,12 +40,16 @@ function game(playRound){
         /// takes player input on everyloop and turns playerInput to lower case so that the user selection is not Case sensitive
         let playerSelection = prompt('Rock, Paper or Scissors?', '').toLowerCase();
         console.log(playerSelection)
+        /// on every loop calls computerPlay to get a random hand and stores it in computerSelection
         computerSelection = computerPlay() ;
         console.log(computerSelection);
+        /// on every loop calls playround with new playerSelection and computerSelection parameters and stores them in the result
         result = playRound(playerSelection, computerSelection);
+        /// if result is win then adds one point to your score
         if (result == win){
              yourScore += 1
              console.log(win + ' Your score is ' + yourScore);
+             ///when you get 3 points loop stops
              if (yourScore === 3){
                  i = 5;
                  alert('Winner Wiener')
@@ -59,6 +63,7 @@ function game(playRound){
                  alert('Abandon all hope!');
                 }
         }
+        /// if it's a draw takes 1 away from the counter and runs the loop again
         else if (result == draw){
              i--;
              console.log(draw + ' Try again');
