@@ -16,12 +16,15 @@ function computerPlay(){
 function playRound(playerSelection , computerSelection){
     /// checks if player had a loosing hand, if so returns loose
     if ((playerSelection == ('rock') && computerSelection == ('paper')) || (playerSelection == ('scissors') && computerSelection == ('rock')) ||  (playerSelection == ('paper') && computerSelection == ('scissors'))){
+        const loose = alert(`You loose! ${computerSelection} beats ${playerSelection}`)
         return loose;
     /// checks if player had a winning hand, if so returns win
     }else if ((playerSelection == ('rock') && computerSelection == ('scissors')) || (playerSelection == ('scissors') && computerSelection == ('paper')) || (playerSelection == ('paper') && computerSelection == ('rock'))){
+        alert(`You win! ${playerSelection} beats ${computerSelection}`)
         return win
         ///checks if the player and computer selected the same hand, if so returns draw.
     }else if (playerSelection === computerSelection){
+        alert('It\'s a draw')
         return draw;
         /// at all other scenarios returns invalid option
     }else return console.log('invalid option');
