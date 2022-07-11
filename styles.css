@@ -1,0 +1,32 @@
+#scoreBoard{
+    display:flex;
+    background-color: darkgrey;
+    height: 100px;
+    width: 300px;
+}
+
+.hero{
+
+}
+.score{
+
+}
+.enemy{
+
+}
+
+#playSelect{
+
+}
+
+#rock{
+
+}
+
+#paper{
+
+}
+
+#scissors{
+
+}

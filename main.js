@@ -5,7 +5,7 @@ function computerPlay(){
     ///Math.floor rounds up the number to next integer, Math.random gives random number between 0 and 1
  return (playSelect[(Math.floor(Math.random() * playSelect.length))])
 } 
-const computerSelection = computerPlay() ;
+let computerSelection = computerPlay() ;
 
  const win = ('You win!');
  const loose = ('You loose!');
