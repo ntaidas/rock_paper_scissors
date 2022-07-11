@@ -7,21 +7,42 @@ function computerPlay(){
 } 
 let computerSelection = computerPlay() ;
 
- const win = ('You win!');
- const loose = ('You loose!');
- const draw = ('It\'s a draw');
+const win = ('You win!');
+const loose = ('You loose!');
+const draw = ('It\'s a draw');
 
- let buttons = document.querySelectorAll('button')
- let rock = document.querySelectorAll('button')[0]
- 
+let buttons = document.querySelectorAll('button')
+let rock = document.querySelectorAll('button')[0]
+let paper = document.querySelectorAll('button')[1]
+let scissors = document.querySelectorAll('button')[2]
 
 
 rock.addEventListener('click', clickTest)
  
+function playPaper(){
+    computerPlay()
+    if(computerSelection == ('scissors'))
+    {console.log(loose);}
+    else if (computerSelection == ('rock')){
+        console.log(win);
+    }
+    else console.log(draw)
+}
 
- function clickTest(){
-    console.log('1')
- }
+paper.addEventListener('click',playPaper)
+
+
+for(i = 0; i <= buttons.length -1; i++){
+    buttons[i].addEventListener('click', clickTest)
+}
+function clickTest(){
+    console.log('namas')
+    
+}
+
+function clickTest1(){
+    console.log('papas')
+}
 
 
 /// plays one round of RPS taking computer and players selection and returns the result
@@ -37,7 +58,7 @@ function playRound(playerSelection , computerSelection){
     else if (playerSelection === computerSelection){
         return draw;}
     else return console.log('invalid option');
-    }
+}
 
 let yourScore = 0
 let computerScore = 0
