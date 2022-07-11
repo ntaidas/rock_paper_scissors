@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-
+        <h1>RPS 4 LIFE</h1>
+        <div id="main">
+            <div id="story"></div>
+            <div id="scoreBoard">
+                <div class="hero">Player 1</div>
+                <div class="score">
+                    <div id="playerScore">
+                        0
+                    </div>
+                    :
+                    <div id="enemyScore">
+                        0
+                    </div>
+                </div>
+                <div class="enemy">The Master-Evil</div>
+            </div>
+            <div id="playSelect">
+                <button id="rock" ><img src="./img/rock.jpg"/></button>
+                <button id="paper"><img src="./img/Paper_450x450.jpg"/></button>
+                <button id="scissors"><img src="./img/scissors.jpg" /></button>
+            </div>
+        </div>
     </body>
 </html>
