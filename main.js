@@ -2,46 +2,87 @@
 const playSelect = ['rock' , 'paper' , 'scissors']
 
 function computerPlay(){
-    ///Math.floor rounds up the number to next integer, Math.random gives random number between 0 and 1
  return (playSelect[(Math.floor(Math.random() * playSelect.length))])
 } 
-let computerSelection = computerPlay() ;
+
 
 const win = ('You win!');
 const loose = ('You loose!');
 const draw = ('It\'s a draw');
 
-let buttons = document.querySelectorAll('button')
-let rock = document.querySelectorAll('button')[0]
-let paper = document.querySelectorAll('button')[1]
-let scissors = document.querySelectorAll('button')[2]
+const h1 = document.querySelector('h1')
+const main = document.getElementById('main')
+const rock = document.querySelectorAll('button')[0]
+const paper = document.querySelectorAll('button')[1]
+const scissors = document.querySelectorAll('button')[2]
+let scoreBoard = document.getElementsByClassName('scoreBoard')
+let score = document.getElementsByClassName('score')
+let playerScore = document.getElementById('playerScore')
+let container = document.createElement('div')
+container.setAttribute('id', 'gameOver')
+container.innerText = 'Abandon all hope'
+playerScore.innerText = 0
+enemyScore.innerText = 0
+let games = 0
 
-
-rock.addEventListener('click', clickTest)
  
-function playPaper(){
-    computerPlay()
-    if(computerSelection == ('scissors'))
-    {console.log(loose);}
-    else if (computerSelection == ('rock')){
-        console.log(win);
+    function playRock(){
+            let computerSelection = computerPlay()
+            if(computerSelection == ('paper')){
+                enemyScore.innerText++
+                
+            }
+            else if (computerSelection == ('scissors')){
+                playerScore.innerText++
+                
+            }
+            else {
+                console.log(draw)
+                
+            }
+        
     }
-    else console.log(draw)
-}
+    function playPaper(){ 
+        let computerSelection = computerPlay()
+        if(computerSelection == ('scissors')){
+            enemyScore.innerText++
+            
+        }
+        else if (computerSelection == ('rock')){
+            playerScore.innerText++
+           
+        }
+        else {
+            console.log(draw)
+            games--
+        }
+    }
+    function playScissors(){
+        let computerSelection = computerPlay()
+        if(computerSelection == ('rock')){
+            enemyScore.innerText++
+           
+        }
+        else if (computerSelection == ('paper')){
+            playerScore.innerText++
+            
+        }
+        else {
+            console.log(draw)
+            games--
+        }
+    }
+ 
+
+let plays =[playRock, playPaper, playScissors]
 
 paper.addEventListener('click',playPaper)
+rock.addEventListener('click', playRock)
+scissors.addEventListener('click', playScissors)
 
 
-for(i = 0; i <= buttons.length -1; i++){
-    buttons[i].addEventListener('click', clickTest)
-}
-function clickTest(){
-    console.log('namas')
-    
-}
-
-function clickTest1(){
-    console.log('papas')
+if(playerScore.innerText == '5' || enemyScore.innerText == '5'){
+    h1.innerText = 'Game Over'
 }
 
 
@@ -60,6 +101,5 @@ function playRound(playerSelection , computerSelection){
     else return console.log('invalid option');
 }
 
-let yourScore = 0
-let computerScore = 0
+
         

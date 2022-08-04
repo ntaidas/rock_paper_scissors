@@ -18,22 +18,22 @@ h1 {
     padding-bottom: 2rem;
 }
 
-#scoreBoard{
+.scoreBoard{
     display:flex;
     background-color: darkgrey;
     height: 100px;
     justify-content: space-around;
 }
-.hero{
+#hero{
     color: blue ;
     font-size: 50px;
 }
-.enemy{
+#enemy{
     color: red;
     font-size: 50px;
 }
 .score{
-    display: flex;
+    display: contents;
     font-size: 50px;
     text-align: center;
   
@@ -46,7 +46,7 @@ h1 {
 }
 
 
-#playSelect {
+.playSelect {
     display: flex;
     justify-content: space-around;
     padding-top: 2rem;
