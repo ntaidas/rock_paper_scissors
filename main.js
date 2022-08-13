@@ -4,6 +4,7 @@ const playSelect = ['rock' , 'paper' , 'scissors']
 function computerPlay(){
  return (playSelect[(Math.floor(Math.random() * playSelect.length))])
 } 
+let computerSelection = computerPlay() ;
 
 
 const win = ('You win!');
