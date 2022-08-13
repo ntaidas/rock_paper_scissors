@@ -22,68 +22,97 @@ let container = document.createElement('div')
 container.setAttribute('id', 'gameOver')
 container.innerText = 'Abandon all hope'
 playerScore.innerText = 0
-enemyScore.innerText = 0
-let games = 0
+enemyScore.innerText  = 0
+let playerScoreCounter = 0
+let enemyScoreCounter = 0
+
+    function gameOver(){
+        if (playerScoreCounter == 5){
+            h1.innerText = 'You saved the day!'
+            paper.removeEventListener('click',playPaper)
+            rock.removeEventListener('click', playRock)
+            scissors.removeEventListener('click', playScissors)
+        }
+        if (enemyScoreCounter == 5){
+            h1.innerText = 'Abbandon all hope!!!'
+            paper.removeEventListener('click',playPaper)
+            rock.removeEventListener('click', playRock)
+            scissors.removeEventListener('click', playScissors)
+        }
+
+
+    }
+
 
  
     function playRock(){
             let computerSelection = computerPlay()
             if(computerSelection == ('paper')){
+                h1.innerText = loose
                 enemyScore.innerText++
+                enemyScoreCounter++
                 
             }
             else if (computerSelection == ('scissors')){
+                h1.innerText = win
                 playerScore.innerText++
+                playerScoreCounter++
+                gameOver()
+
+                
                 
             }
             else {
-                console.log(draw)
+                h1.innerText = draw
                 
             }
+            gameOver()
         
     }
     function playPaper(){ 
         let computerSelection = computerPlay()
         if(computerSelection == ('scissors')){
+            h1.innerText = loose
             enemyScore.innerText++
+            enemyScoreCounter++
             
         }
         else if (computerSelection == ('rock')){
+            h1.innerText = win
             playerScore.innerText++
-           
+            playerScoreCounter++
         }
         else {
-            console.log(draw)
-            games--
+            h1.innerText = draw
         }
+        gameOver()
     }
     function playScissors(){
         let computerSelection = computerPlay()
         if(computerSelection == ('rock')){
+            h1.innerText = loose
             enemyScore.innerText++
+            enemyScoreCounter++
            
         }
         else if (computerSelection == ('paper')){
+            h1.innerText = win
             playerScore.innerText++
-            
+            playerScoreCounter++
         }
         else {
-            console.log(draw)
-            games--
+            h1.innerText = draw
         }
+        gameOver()
     }
  
-
-let plays =[playRock, playPaper, playScissors]
 
 paper.addEventListener('click',playPaper)
 rock.addEventListener('click', playRock)
 scissors.addEventListener('click', playScissors)
 
 
-if(playerScore.innerText == '5' || enemyScore.innerText == '5'){
-    h1.innerText = 'Game Over'
-}
+
 
 
 /// plays one round of RPS taking computer and players selection and returns the result
