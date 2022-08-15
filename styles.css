@@ -14,6 +14,7 @@ h1 {
     font-size: 100px;
     margin-top: -0px;
     color: rgb(207, 29, 29);
+    padding-top: 25px;
 
 }
 
@@ -29,6 +30,7 @@ button{
     font-size: 2rem;
     text-align: center;
     padding-bottom: 2rem;
+    
 }
 
 .scoreBoard{
@@ -39,10 +41,12 @@ button{
     border-style: solid;
     border-color: yellow;
     box-shadow: 0rem 0rem 3rem red ;
+    padding-top: 25px;
 }
 #hero{
     color: blue ;
     font-size: 50px;
+   
 }
 #enemy{
     color: red;
@@ -52,6 +56,7 @@ button{
     display: contents;
     font-size: 50px;
     text-align: center;
+    padding-right: 50px;
   
 }
 #playerScore{
