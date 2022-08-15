@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(73, 64, 64);
+    background-color: rgb(19, 19, 19);
 }
 
 #main{
@@ -15,9 +15,11 @@ h1 {
 }
 
 button{
-    height: 500px;
+    height: 400px;
     background-color: rgb(73, 64, 64);
-    border-style: none;
+    border-style: solid;
+    border-color: yellow;
+    box-shadow: 0rem 0rem 3rem red ;
 }
 
 #story{
@@ -31,6 +33,9 @@ button{
     background-color: darkgrey;
     height: 100px;
     justify-content: space-around;
+    border-style: solid;
+    border-color: yellow;
+    box-shadow: 0rem 0rem 3rem red ;
 }
 #hero{
     color: blue ;
