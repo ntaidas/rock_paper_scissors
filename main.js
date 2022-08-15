@@ -33,15 +33,22 @@ let enemyScoreCounter = 0
             paper.removeEventListener('click',playPaper)
             rock.removeEventListener('click', playRock)
             scissors.removeEventListener('click', playScissors)
+            reset()
         }
         if (enemyScoreCounter == 5){
             h1.innerText = 'Abbandon all hope!!!'
             paper.removeEventListener('click',playPaper)
             rock.removeEventListener('click', playRock)
             scissors.removeEventListener('click', playScissors)
+            reset()
         }
+    }
 
-
+    function reset(){
+        let playAgain = document.createElement("button")
+        playAgain.innerText= "Play Again"
+        playAgain.setAttribute("id", "play-again")
+        document.body.appendChild(playAgain)
     }
 
     function loosing(){
@@ -70,17 +77,12 @@ let enemyScoreCounter = 0
                 h1.innerText = win
                 playerScore.innerText++
                 playerScoreCounter++
-                winning()
-
-                
-                
+                winning()  
             }
             else {
                 h1.innerText = draw
-                
             }
             gameOver()
-        
     }
     function playPaper(){ 
         let computerSelection = computerPlay()
@@ -88,8 +90,7 @@ let enemyScoreCounter = 0
             h1.innerText = loose
             enemyScore.innerText++
             enemyScoreCounter++
-            loosing()
-            
+            loosing() 
         }
         else if (computerSelection == ('rock')){
             h1.innerText = win
@@ -110,7 +111,6 @@ let enemyScoreCounter = 0
             enemyScore.innerText++
             enemyScoreCounter++
             loosing()
-           
         }
         else if (computerSelection == ('paper')){
             h1.innerText = win

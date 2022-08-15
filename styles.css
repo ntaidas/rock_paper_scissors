@@ -3,6 +3,7 @@ body {
     font-family: 'GlacialIndifferenceRegular';
     font-weight: normal;
     font-style: normal;
+    display: flexbox;
 }
 
 #main{
@@ -79,5 +80,13 @@ button{
 img {
     height: 70%;
     width: 90%;
+}
+
+#play-again {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px solid green;
 }
 
