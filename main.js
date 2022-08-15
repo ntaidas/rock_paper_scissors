@@ -44,7 +44,19 @@ let enemyScoreCounter = 0
 
     }
 
+    function loosing(){
+        playerScore.style.fontSize = "50px"
+        enemyScore.style.fontSize = "60px"
+    }
+    function winning(){
+        playerScore.style.fontSize = "60px"
+        enemyScore.style.fontSize = "50px"
+    }
 
+    function tie(){
+        playerScore.style.fontSize = "50px"
+        enemyScore.style.fontSize = "50px"       
+    }
  
     function playRock(){
             let computerSelection = computerPlay()
@@ -52,13 +64,13 @@ let enemyScoreCounter = 0
                 h1.innerText = loose
                 enemyScore.innerText++
                 enemyScoreCounter++
-                
+                loosing()
             }
             else if (computerSelection == ('scissors')){
                 h1.innerText = win
                 playerScore.innerText++
                 playerScoreCounter++
-                gameOver()
+                winning()
 
                 
                 
@@ -76,15 +88,18 @@ let enemyScoreCounter = 0
             h1.innerText = loose
             enemyScore.innerText++
             enemyScoreCounter++
+            loosing()
             
         }
         else if (computerSelection == ('rock')){
             h1.innerText = win
             playerScore.innerText++
             playerScoreCounter++
+            winning()
         }
         else {
             h1.innerText = draw
+            tie()
         }
         gameOver()
     }
@@ -94,15 +109,18 @@ let enemyScoreCounter = 0
             h1.innerText = loose
             enemyScore.innerText++
             enemyScoreCounter++
+            loosing()
            
         }
         else if (computerSelection == ('paper')){
             h1.innerText = win
             playerScore.innerText++
             playerScoreCounter++
+            winning()
         }
         else {
             h1.innerText = draw
+            tie()
         }
         gameOver()
     }

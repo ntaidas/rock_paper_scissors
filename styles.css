@@ -15,6 +15,7 @@ h1 {
     margin-top: -0px;
     color: rgb(207, 29, 29);
     padding-top: 25px;
+    
 
 }
 
@@ -61,9 +62,11 @@ button{
 }
 #playerScore{
     color: blue;
+    transition: 100ms;
 }
 #enemyScore{
     color: RED;
+    transition: 100ms;
 }
 
 
