@@ -74,19 +74,22 @@ button{
 .playSelect {
     display: flex;
     justify-content: space-around;
-    padding-top: 2rem;
+    padding: 2rem;
 }
 
 img {
-    height: 70%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
+}
+
+#rock{
+    width: 394px;
+
 }
 
 #play-again {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    border: 3px solid green;
+    margin: 0 45%;
+    height: 5rem;
+    width: 10rem;
 }
 
